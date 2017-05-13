@@ -34,7 +34,6 @@ ctx.lineTo(352, 602);
 ctx.stroke();
 ctx.closePath();
 
-
 // BLANK AREA
 ctx.fillStyle = "black"
 ctx.fillRect(500, 0, 780, 800);
@@ -45,11 +44,30 @@ ctx.fillStyle = "white";
 ctx.fillText("Place your document in the", 605, 400);
 ctx.fillStyle = "red";
 ctx.fillText("viewing area", 975, 400);
-
 // -----------------------------------------------------------------------------
 
 // CLASSIFIERS -----------------------------------------------------------------
+
+// POSITION
+window.lampix.registerPositionClassifier([{
+    posX: 78, posY: 199, width: 423, height: 343.6, classifier: "segm_cls_nes" // Document Position
+}], function (rectIndex, outlines) {
+
+    // Here we need to change the outline of the object
+    // outlines[0].outline.points[0].posX = 100;
+
+    console.log("position classifier", rectIndex, outlines);
+    classifier_state[rectIndex] = outlines; // Classifier State just holds the object
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear Canvas
+    drawPDR(); // Draw
+
+}); // END Function
+
 // -----------------------------------------------------------------------------
 
 // FUNCTIONS -------------------------------------------------------------------
+function drawPDR(){
+  ctx.fillStyle("green");
+  ctx.fill();
+} // END drawPDR
 // -----------------------------------------------------------------------------
