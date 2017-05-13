@@ -8,9 +8,8 @@ var canvas = document.querySelector("canvas"); // Attach Canvas
 var ctx = canvas.getContext("2d"); // Make it a 2D drawing on the canvas
 // -----------------------------------------------------------------------------
 
-// POSITION CLASSIFIER ---------------------------------------------------------
-var classifier_state = []; // Array that keeps track of which object is where
-var preDetState = []; // Pre Detected/Determined State
+// CLASSIFIER ------------------------------------------------------------------
+var changedScreen = false;
 // -----------------------------------------------------------------------------
 
 // STYLE CANVAS ----------------------------------------------------------------
@@ -74,8 +73,10 @@ window.lampix.registerSimpleClassifier(
             default: ctx.fillStyle = "white"; break; // WHEN DOES THIS HAPPEN?
         }
 
-        if (rectIndex === 0) {
+        if (rectIndex === 0 && changedScreen === false) {
+            ctx.fillStyle = "green";
             ctx.fillRect(0,0,canvas.width,canvas.height);
+            changedScreen = true;
         }
       }
 ); // End registerSimpleClassifier
