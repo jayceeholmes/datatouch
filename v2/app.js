@@ -78,7 +78,7 @@ window.lampix.registerSimpleClassifier(
         if (rectIndex === 0) {
             ctx.fillRect(0,0,canvas.width,canvas.height);
         }
-
+      }
 ); // End registerSimpleClassifier
 
 
