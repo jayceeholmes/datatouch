@@ -1,0 +1,8 @@
+body {
+    background-color: white;
+    color: black;
+    margin: 0;
+    width: 1280px;
+    height: 800px;
+    /*overflow: hidden;*/
+}
