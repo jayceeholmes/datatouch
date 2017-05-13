@@ -41,7 +41,7 @@ ctx.fillRect(500, 0, 780, 800);
 
 // TEXT
 ctx.font = "30px Arial";
-ctx.fillStyle = "white ";
+ctx.fillStyle = "white";
 ctx.fillText("Place your document in the", 605, 400);
 ctx.fillStyle = "red";
 ctx.fillText("viewing area", 975, 400);
