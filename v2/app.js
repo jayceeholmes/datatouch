@@ -35,7 +35,7 @@ ctx.closePath();
 
 // BLANK AREA
 ctx.fillStyle = "black"
-ctx.fillRect(500, 0, 780, 800);
+ctx.fillRect(78, 199, 344, 403);
 
 // TEXT
 ctx.font = "30px Arial";
@@ -66,7 +66,7 @@ window.lampix.registerSimpleClassifier(
         ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear Canvas
 
         // I was able to redefine the class tag and hit the other cases, but I have yet to see that happen in the simulator
-
+        classTag = 1;
         switch(classTag){ // When do I get other cases?
             case "finger": ctx.fillStyle = "red"; break;
             case "no_finger": ctx.fillStyle = "grey";break;
@@ -76,7 +76,6 @@ window.lampix.registerSimpleClassifier(
         }
 
         if (rectIndex === 0) {
-            ctx.fillStyle = "green";
             ctx.fillRect(0,0,canvas.width,canvas.height);
         }
 
