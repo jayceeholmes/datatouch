@@ -15,7 +15,8 @@ var changedScreen = false;
 // STYLE CANVAS ----------------------------------------------------------------
 
 // DOCUMENT AREA
-// ctx.rect(0, 0, 500, 800);
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, 500, 800);
 
 // RED LINES
 ctx.beginPath();
@@ -38,7 +39,7 @@ ctx.fillRect(500, 0, 780, 800);
 
 // TEXT
 ctx.font = "30px Arial";
-ctx.fillStyle = "white";
+ctx.fillStyle = "black";
 ctx.fillText("Place your document in the", 605, 400);
 ctx.fillStyle = "red";
 ctx.fillText("viewing area", 975, 400);
@@ -97,6 +98,10 @@ function drawIA() {
 
     // DOCUMENT AREA
 
+    // BACKGROUND
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, 500, 800);
+
     // RED LINES
     ctx.beginPath();
     ctx.lineWidth = 10;
@@ -137,26 +142,23 @@ function drawIA() {
     ctx.arc(925, 175, 40, 0, 2 * Math.PI);
     ctx.fill();
     ctx.closePath(); // Close Shape
-    ctx.fillText("TREND", 990, 185);
-
-
-    // STUFF THAT IS STILL THE SAME
-
+    ctx.fillText("LSR", 990, 185);
 
     // RED LINES
     ctx.beginPath();
     ctx.lineWidth = 10;
     ctx.strokeStyle = "red";
-    ctx.moveTo(30, 30);
-    ctx.lineTo(30, 100);
-    ctx.moveTo(25, 30);
-    ctx.lineTo(100, 30);
-    ctx.moveTo(470, 770);
-    ctx.lineTo(470, 700);
-    ctx.moveTo(475, 770);
-    ctx.lineTo(400, 770);
+    ctx.moveTo(78, 199);
+    ctx.lineTo(78, 277);
+    ctx.moveTo(73, 199);
+    ctx.lineTo(153, 199);
+    ctx.moveTo(422, 602);
+    ctx.lineTo(422, 532);
+    ctx.moveTo(427, 602);
+    ctx.lineTo(352, 602);
     ctx.stroke();
     ctx.closePath();
+
 
 } // END drawIA
 // -----------------------------------------------------------------------------
