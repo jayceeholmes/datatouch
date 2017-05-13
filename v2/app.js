@@ -17,20 +17,20 @@ var changedScreen = false;
 // DOCUMENT AREA
 ctx.rect(0, 0, 500, 800);
 
-// RED LINES
-ctx.beginPath();
-ctx.lineWidth = 10;
-ctx.strokeStyle = "red";
-ctx.moveTo(78, 199);
-ctx.lineTo(78, 277);
-ctx.moveTo(73, 199);
-ctx.lineTo(153, 199);
-ctx.moveTo(422, 602);
-ctx.lineTo(422, 532);
-ctx.moveTo(427, 602);
-ctx.lineTo(352, 602);
-ctx.stroke();
-ctx.closePath();
+// // RED LINES
+// ctx.beginPath();
+// ctx.lineWidth = 10;
+// ctx.strokeStyle = "red";
+// ctx.moveTo(78, 199);
+// ctx.lineTo(78, 277);
+// ctx.moveTo(73, 199);
+// ctx.lineTo(153, 199);
+// ctx.moveTo(422, 602);
+// ctx.lineTo(422, 532);
+// ctx.moveTo(427, 602);
+// ctx.lineTo(352, 602);
+// ctx.stroke();
+// ctx.closePath();
 
 // BLANK AREA
 ctx.fillStyle = "white"
@@ -51,10 +51,10 @@ ctx.fillText("viewing area", 975, 400);
 window.lampix.registerSimpleClassifier(
     [{
         // CLASS RECT ARRAY (1)
-        posX: 100,   // The X coordinate of the left side of the rectangle
-        posY: 300,   // The Y coordinate of the left side of the rectangle
-        width: 200,  // The width of the rectangle
-        height: 200, // The height of the rectangle
+        posX: 85,   // The X coordinate of the left side of the rectangle
+        posY: 205,   // The Y coordinate of the left side of the rectangle
+        width: 335,  // The width of the rectangle
+        height: 395, // The height of the rectangle
         classifier: "cls_conv_fin" // The classifier to run inside the rectangle
     }],
 
