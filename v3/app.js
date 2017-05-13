@@ -15,8 +15,8 @@ var changedScreen = false;
 // STYLE CANVAS ----------------------------------------------------------------
 
 // DOCUMENT AREA
-ctx.fillStyle = "white";
-ctx.fillRect(0, 0, 500, 800);
+// ctx.fillStyle = "white";
+// ctx.fillRect(0, 0, 500, 800);
 
 // RED LINES
 ctx.beginPath();
@@ -44,6 +44,11 @@ ctx.fillText("Place your document in the", 605, 400);
 ctx.fillStyle = "red";
 ctx.fillText("viewing area", 975, 400);
 
+
+// DELETE
+ctx.fillStyle = "black";
+ctx.fillRect(500, 0, 780, 800);
+drawIA();
 
 // -----------------------------------------------------------------------------
 
@@ -119,7 +124,6 @@ function drawIA() {
 
     // INTERACTIVE AREA
 
-
     // OPTIONS: BOX
     ctx.beginPath();
     ctx.lineWidth = 10;
@@ -128,21 +132,32 @@ function drawIA() {
     ctx.stroke();
     ctx.closePath(); // Close Shape
 
+    // STYLE
+    ctx.font = "20px Arial";
+
     // OPTIONS: PLOT
     ctx.beginPath();
     ctx.fillStyle = "white";
-    ctx.arc(675, 175, 40, 0, 2 * Math.PI);
+    ctx.arc(675, 175, 30, 0, 2 * Math.PI);
     ctx.fill();
     ctx.closePath(); // Close Shape
-    ctx.fillText("PLOT", 735, 185);
+    ctx.fillText("PLOT", 715, 185);
 
     // OPTIONS: TREND
     ctx.beginPath();
     ctx.fillStyle = "white";
-    ctx.arc(925, 175, 40, 0, 2 * Math.PI);
+    ctx.arc(825, 175, 30, 0, 2 * Math.PI);
     ctx.fill();
     ctx.closePath(); // Close Shape
-    ctx.fillText("LSR", 990, 185);
+    ctx.fillText("TRNDLNS", 865, 185);
+
+    // OPTIONS: UPDATE
+    ctx.beginPath();
+    ctx.fillStyle = "white";
+    ctx.arc(1010, 175, 30, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.closePath(); // Close Shape
+    ctx.fillText("UPDATE", 1050, 185);
 
     // RED LINES
     ctx.beginPath();
