@@ -51,10 +51,10 @@ ctx.fillText("viewing area", 975, 400);
 window.lampix.registerSimpleClassifier(
     [{
         // CLASS RECT ARRAY (1)
-        posX: 78,   // The X coordinate of the left side of the rectangle
-        posY: 199,   // The Y coordinate of the left side of the rectangle
-        width: 344,  // The width of the rectangle
-        height: 403, // The height of the rectangle
+        posX: 85,   // The X coordinate of the left side of the rectangle
+        posY: 205,   // The Y coordinate of the left side of the rectangle
+        width: 335,  // The width of the rectangle
+        height: 395, // The height of the rectangle
         classifier: "cls_conv_fin" // The classifier to run inside the rectangle
     }],
 
