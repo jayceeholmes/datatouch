@@ -4,5 +4,9 @@ body {
     margin: 0;
     width: 1280px;
     height: 800px;
-    /*overflow: hidden;*/
+    overflow: hidden;
+}
+
+svg {
+    background-color: none;
 }
