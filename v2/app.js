@@ -35,7 +35,7 @@ ctx.closePath();
 
 // BLANK AREA
 ctx.fillStyle = "black"
-ctx.fillRect(78, 199, 344, 403);
+ctx.fillRect(500, 0, 780, 800);
 
 // TEXT
 ctx.font = "30px Arial";
@@ -77,6 +77,7 @@ window.lampix.registerSimpleClassifier(
 
         if (rectIndex === 0) {
             ctx.fillRect(0,0,canvas.width,canvas.height);
+            ctx.fillStyle = "green";
         }
       }
 ); // End registerSimpleClassifier
