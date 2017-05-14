@@ -12,6 +12,10 @@ var ctx = canvas.getContext("2d"); // Make it a 2D drawing on the canvas
 var changedScreen = false;
 // -----------------------------------------------------------------------------
 
+// IMG
+var img = new Image();
+img.src = "graph.png";
+
 // STYLE CANVAS ----------------------------------------------------------------
 
 // DOCUMENT AREA
@@ -120,6 +124,9 @@ window.lampix.registerSimpleClassifier(
             ctx.fill();
             ctx.closePath(); // Close Shape
             ctx.fillText("PLOT", 715, 185);
+
+            ctx.drawImage(img, 675, 375,464,400);
+
         } // END 1
 
         if (rectIndex === 2) {
@@ -134,6 +141,9 @@ window.lampix.registerSimpleClassifier(
             ctx.closePath(); // Close Shape
             ctx.fillText("TRNDLNS", 865, 185);
 
+            ctx.drawImage(img, 675, 375,464,400);
+
+
         } // END 2
 
         if (rectIndex === 3) {
@@ -147,6 +157,9 @@ window.lampix.registerSimpleClassifier(
                 ctx.fill();
                 ctx.closePath(); // Close Shape
                 ctx.fillText("UPDATE", 1050, 185);
+
+                ctx.drawImage(img, 675, 375,464,400);
+
 
         } // END 3
 
