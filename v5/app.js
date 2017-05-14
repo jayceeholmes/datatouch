@@ -9,9 +9,9 @@ var ctx = canvas.getContext("2d"); // Make it a 2D drawing on the canvas
 // -----------------------------------------------------------------------------
 
 // COLORS ----------------------------------------------------------------------
-var c1 = "white";
-var c2 = "white";
-var c3 = "white";
+var c1;
+var c2;
+var c3;
 // -----------------------------------------------------------------------------
 
 // LAMPIX ----------------------------------------------------------------------
@@ -24,7 +24,8 @@ console.log("lampixInfo", info);
 // DOCUMENT AREA ---------------
 
 // BACKGROUND
-ctx.rect(0, 0, 500, 800);
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, 500, 800);
 
 // RED LINES
 ctx.beginPath();
@@ -52,7 +53,7 @@ ctx.font = "30px Arial";
 ctx.fillStyle = "white";
 ctx.fillText("Place your document in the", 605, 400);
 ctx.fillStyle = "red";
-ctx.fillText("viewing area", 975, 400);
+ctx.fillText("viewing area", 980, 400);
 
 // -----------------------------------------------------------------------------
 
@@ -60,36 +61,127 @@ ctx.fillText("viewing area", 975, 400);
 
 // REGISTER MOVEMENT ---------------------------
 window.lampix.registerMovement([{
-    posX: 98, posY: 219, width: 304, height: 127 // BOX 1
-  }, {
-    posX: 98, posY: 346, width: 304, height: 127 // BOX 2
-  }, {
-    posX: 98, posY: 473, width: 304, height: 127 // BOX 3
-  }], function (rectIndex, outlines) {
+    posX: 98,
+    posY: 219,
+    width: 304,
+    height: 127 // BOX 1
+}, {
+    posX: 98,
+    posY: 346,
+    width: 304,
+    height: 127 // BOX 2
+}, {
+    posX: 98,
+    posY: 473,
+    width: 304,
+    height: 127 // BOX 3
+}], function(rectIndex, outlines) {
 
     console.log("movement", rectIndex, outlines);
     ctx.clearRect(0, 0, canvas.width, canvas.height); // CLEAR CANVAS
 
+    c1 = "white";
+    c2 = "white";
+    c3 = "white";
+
     if (rectIndex == 0) { // CALLBACK FOR BOX 1
-      data1(); // Visualize Data
-      drawIA(); // Draw
+        data1(); // Visualize Data
+        drawIA(); // Draw
     } // END 0
 
     if (rectIndex == 1) { // CALLBACK FOR BOX 2
-      data2(); // Visualize Data
-      drawIA(); // Draw
+        data2(); // Visualize Data
+        drawIA(); // Draw
     } // END 1
 
     if (rectIndex == 2) { // CALLBACK FOR BOX 3
-      data3(); // Visualize Data
-      drawIA(); // Draw
+        data3(); // Visualize Data
+        drawIA(); // Draw
     } // END 2
 
     setTimeout(function() {
-      lampix.registerMovement([], null)
+        lampix.registerMovement([], null)
     }, 6000);
 
 }); // END Function, registerMovement
+
+// REGISTER SIMPLE CLASSIFIER  ---------------------------
+
+window.lampix.registerSimpleClassifier([{
+        // PLOT
+        posX: 645, // The X coordinate of the left side of the rectangle
+        posY: 145, // The Y coordinate of the left side of the rectangle
+        width: 60, // The width of the rectangle
+        height: 60, // The height of the rectangle
+        classifier: "cls_conv_fin" // The classifier to run inside the rectangle
+    }, {
+        // TRENDLINE
+        posX: 795, // The X coordinate of the left side of the rectangle
+        posY: 145, // The Y coordinate of the left side of the rectangle
+        width: 60, // The width of the rectangle
+        height: 60, // The height of the rectangle
+        classifier: "cls_conv_fin" // The classifier to run inside the rectangle
+    }, {
+        // UPDATE
+        posX: 980, // The X coordinate of the left side of the rectangle
+        posY: 145, // The Y coordinate of the left side of the rectangle
+        width: 60, // The width of the rectangle
+        height: 60, // The height of the rectangle
+        classifier: "cls_conv_fin" // The classifier to run inside the rectangle
+    }],
+
+    // Function that is called when a simpleClassifier is detected
+    function(rectIndex, classTag) {
+        console.log("simpleClassifier", arguments); // [RectIndex, classTag]
+
+        // SWITCH CASE
+        switch (classTag) {
+            case "finger":
+                ctx.fillStyle = "red";
+                break;
+            case "no_finger":
+                ctx.fillStyle = "grey";
+                break;
+            case "1":
+                ctx.fillStyle = "red";
+                break;
+            case "0":
+                ctx.fillStyle = "blue";
+                break;
+            default:
+                ctx.fillStyle = "white";
+                break;
+        } // END Switch
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear Canvas
+
+        // OPTIONS: PLOT
+        if (rectIndex === 0) {
+            c1 = "green";
+            c2 = "white";
+            c3 = "white";
+            drawIA();
+        } // END 0
+
+        // OPTIONS: TREND
+        if (rectIndex === 1) {
+            c1 = "white";
+            c2 = "green";
+            c3 = "white";
+            drawIA();
+        } // END 1
+
+        // OPTIONS: UPDATE
+        if (rectIndex === 2) {
+            c1 = "white";
+            c2 = "white";
+            c3 = "green";
+            drawIA();
+        } // END 2
+
+
+    } // END Function
+); // End registerSimpleClassifier
 // -----------------------------------------------------------------------------
 
 // DRAW FUNCTIONS --------------------------------------------------------------
@@ -144,7 +236,7 @@ function drawIA() {
     ctx.arc(825, 175, 30, 0, 2 * Math.PI);
     ctx.fill();
     ctx.closePath(); // Close Shape
-    ctx.fillText("TRNDLNS", 865, 185);
+    ctx.fillText("TRENDS", 865, 185);
 
     // OPTIONS: UPDATE
     ctx.beginPath();
@@ -161,17 +253,17 @@ function drawIA() {
 // DATA FUNCTION ---------------------------------------------------------------
 
 // DATA1 ------------------
-function data1(){
+function data1() {
 
 } // END data1
 
 // DATA2 ------------------
-function data2(){
+function data2() {
 
 } // END data2
 
 // DATA3 ------------------
-function data3(){
+function data3() {
 
 } // END data3
 
