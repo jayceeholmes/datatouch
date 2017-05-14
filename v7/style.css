@@ -1,12 +1,8 @@
 body {
-    background-color: none;
+    background-color: black;
     color: white;
     margin: 0;
     width: 1280px;
     height: 800px;
     /*overflow: hidden;*/
-}
-
-img {
-  z-index= 2;
 }

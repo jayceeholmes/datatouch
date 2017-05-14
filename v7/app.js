@@ -8,15 +8,11 @@ var canvas = document.querySelector("canvas"); // Attach Canvas
 var ctx = canvas.getContext("2d"); // Make it a 2D drawing on the canvas
 // -----------------------------------------------------------------------------
 
-// COLORS ----------------------------------------------------------------------
+// VARIABLES -------------------------------------------------------------------
 var c1;
 var c2;
 var c3;
-
-var img1 = new Image();
-var img2 = new Image();
-var img3 = new Image();
-
+var data;
 // -----------------------------------------------------------------------------
 
 // LAMPIX ----------------------------------------------------------------------
@@ -90,17 +86,17 @@ window.lampix.registerMovement([{
     c3 = "white";
 
     if (rectIndex == 0) { // CALLBACK FOR BOX 1
-        data1(); // Visualize Data
+        data = 1;
         drawIA(); // Draw
     } // END 0
 
     if (rectIndex == 1) { // CALLBACK FOR BOX 2
-        data2(); // Visualize Data
+        data = 2; // Visualize Data
         drawIA(); // Draw
     } // END 1
 
     if (rectIndex == 2) { // CALLBACK FOR BOX 3
-        data3(); // Visualize Data
+        data = 3; // Visualize Data
         drawIA(); // Draw
     } // END 2
 
@@ -166,9 +162,16 @@ window.lampix.registerSimpleClassifier([{
             c2 = "white";
             c3 = "white";
             drawIA();
-            img1.onload = function() {
-    ctx.drawImage(img1, 550, 300, 600, 411);
-};
+
+            if (data == 1) {
+                document.getElementbyId("image").src="img/tp.jpg";
+            }
+            if (data == 2) {
+                document.getElementbyId("image").src="img/mp.jpg";
+            }
+            if (data == 3) {
+                document.getElementbyId("image").src="img/bp.png";
+            }
         } // END 0
 
         // OPTIONS: TREND
@@ -177,9 +180,15 @@ window.lampix.registerSimpleClassifier([{
             c2 = "green";
             c3 = "white";
             drawIA();
-            img2.onload = function() {
-    ctx.drawImage(img2, 550, 300, 600, 411);
-};
+            if (data == 1) {
+                document.getElementbyId("image").src="img/tt.jpg";
+            }
+            if (data == 2) {
+                document.getElementbyId("image").src="img/mt.jpg";
+            }
+            if (data == 3) {
+                document.getElementbyId("image").src="img/bt.png";
+            }
         } // END 1
 
         // OPTIONS: UPDATE
@@ -188,9 +197,15 @@ window.lampix.registerSimpleClassifier([{
             c2 = "white";
             c3 = "green";
             drawIA();
-            img3.onload = function() {
-    ctx.drawImage(img3, 550, 300, 600, 411);
-};
+            if (data == 1) {
+                document.getElementbyId("image").src="img/tu.jpg";
+            }
+            if (data == 2) {
+                document.getElementbyId("image").src="img/mu.jpg";
+            }
+            if (data == 3) {
+                document.getElementbyId("image").src="img/bu.png";
+            }
         } // END 2
 
 
@@ -261,30 +276,5 @@ function drawIA() {
     ctx.fillText("UPDATE", 1050, 185);
 
 } // END drawIA
-
-// -----------------------------------------------------------------------------
-
-// DATA FUNCTION ---------------------------------------------------------------
-
-// DATA1 ------------------
-function data1() {
-  img1.src = "img/bp.png";
-  img2.src = "img/bt.png";
-  img3.src = "img/bu.png";
-} // END data1
-
-// DATA2 ------------------
-function data2() {
-  img1.src = "img/mp.jpg";
-  img2.src = "img/mt.jpg";
-  img3.src = "img/mu.jpg";
-} // END data2
-
-// DATA3 ------------------
-function data3() {
-  img1.src = "img/tp.jpg";
-  img2.src = "img/tt.jpg";
-  img3.src = "img/tu.jpg";
-} // END data3
 
 // -----------------------------------------------------------------------------
