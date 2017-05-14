@@ -125,7 +125,7 @@ window.lampix.registerSimpleClassifier(
             ctx.closePath(); // Close Shape
             ctx.fillText("PLOT", 715, 185);
 
-            ctx.drawImage(img, 675, 375,464,400);
+            ctx.drawImage(img, 600, 375,580,500);
 
         } // END 1
 
@@ -141,8 +141,7 @@ window.lampix.registerSimpleClassifier(
             ctx.closePath(); // Close Shape
             ctx.fillText("TRNDLNS", 865, 185);
 
-            ctx.drawImage(img, 675, 375,464,400);
-
+            ctx.drawImage(img, 600, 375,580,500);
 
         } // END 2
 
@@ -158,7 +157,7 @@ window.lampix.registerSimpleClassifier(
                 ctx.closePath(); // Close Shape
                 ctx.fillText("UPDATE", 1050, 185);
 
-                ctx.drawImage(img, 675, 375,464,400);
+                ctx.drawImage(img, 600, 375,580,500);
 
 
         } // END 3
