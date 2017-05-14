@@ -15,7 +15,10 @@ var c3;
 // -----------------------------------------------------------------------------
 
 // IMG -------------------------------------------------------------------------
-var img = new Image();
+var img1 = new Image();
+var img2 = new Image();
+var img3 = new Image();
+
 // -----------------------------------------------------------------------------
 
 
@@ -166,7 +169,11 @@ window.lampix.registerSimpleClassifier([{
             c2 = "white";
             c3 = "white";
             drawIA();
-            ctx.drawImage(img1, 550, 300,580,500);
+            img1.onload = function() {
+                ctx.drawImage(img1, 550, 300, 600, 411);
+                console.log("yo");
+            };
+
 
         } // END 0
 
@@ -176,7 +183,10 @@ window.lampix.registerSimpleClassifier([{
             c2 = "green";
             c3 = "white";
             drawIA();
-            ctx.drawImage(img2, 550, 300,580,500);
+            img2.onload = function() {
+                ctx.drawImage(img2, 550, 300, 600, 411);
+            };
+
 
         } // END 1
 
@@ -186,7 +196,10 @@ window.lampix.registerSimpleClassifier([{
             c2 = "white";
             c3 = "green";
             drawIA();
-            ctx.drawImage(img3, 550, 300,580,500);
+            img3.onload = function() {
+                ctx.drawImage(img3, 550, 300, 600, 411);
+            };
+
         } // END 2
 
 
@@ -264,23 +277,23 @@ function drawIA() {
 
 // DATA1 ------------------
 function data1() {
-  img1.src = "bp.jpg";
-  img2.src = "bt.jpg";
-  img3.src = "bu.jpg";
+    img1.src = "img/bp.png";
+    img2.src = "img/bt.png";
+    img3.src = "img/bu.png";
 } // END data1
 
 // DATA2 ------------------
 function data2() {
-  img1.src = "mp.jpg";
-  img2.src = "mt.jpg";
-  img3.src = "mu.jpg";
+    img1.src = "img/mp.jpg";
+    img2.src = "img/mt.jpg";
+    img3.src = "img/mu.jpg";
 } // END data2
 
 // DATA3 ------------------
 function data3() {
-  img1.src = "tp.jpg";
-  img2.src = "tt.jpg";
-  img3.src = "tu.jpg";
+    img1.src = "img/tp.jpg";
+    img2.src = "img/tt.jpg";
+    img3.src = "img/tu.jpg";
 } // END data3
 
 // -----------------------------------------------------------------------------
