@@ -166,6 +166,8 @@ window.lampix.registerSimpleClassifier([{
             c2 = "white";
             c3 = "white";
             drawIA();
+            ctx.drawImage(img1, 550, 300,580,500);
+
         } // END 0
 
         // OPTIONS: TREND
@@ -174,6 +176,8 @@ window.lampix.registerSimpleClassifier([{
             c2 = "green";
             c3 = "white";
             drawIA();
+            ctx.drawImage(img2, 550, 300,580,500);
+
         } // END 1
 
         // OPTIONS: UPDATE
@@ -260,17 +264,23 @@ function drawIA() {
 
 // DATA1 ------------------
 function data1() {
-
+  img1.src = "bp.jpg";
+  img2.src = "bt.jpg";
+  img3.src = "bu.jpg";
 } // END data1
 
 // DATA2 ------------------
 function data2() {
-
+  img1.src = "mp.jpg";
+  img2.src = "mt.jpg";
+  img3.src = "mu.jpg";
 } // END data2
 
 // DATA3 ------------------
 function data3() {
-
+  img1.src = "tp.jpg";
+  img2.src = "tt.jpg";
+  img3.src = "tu.jpg";
 } // END data3
 
 // -----------------------------------------------------------------------------
