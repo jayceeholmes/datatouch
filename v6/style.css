@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    width: 1280px;
+    height: 800px;
+    /*overflow: hidden;*/
+}
+
+canvas{
+  z-index: 0;
+}
+
+svg{
+  z-index: 2;
+}
