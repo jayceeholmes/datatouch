@@ -167,8 +167,8 @@ window.lampix.registerSimpleClassifier([{
             c3 = "white";
             drawIA();
             img1.onload = function() {
-    ctx.drawImage(img1, 550, 300, 600, 411);
-};
+                ctx.drawImage(img1, 550, 300, 600, 411);
+            };
         } // END 0
 
         // OPTIONS: TREND
@@ -178,8 +178,8 @@ window.lampix.registerSimpleClassifier([{
             c3 = "white";
             drawIA();
             img2.onload = function() {
-    ctx.drawImage(img2, 550, 300, 600, 411);
-};
+                ctx.drawImage(img2, 550, 300, 600, 411);
+            };
         } // END 1
 
         // OPTIONS: UPDATE
@@ -189,8 +189,8 @@ window.lampix.registerSimpleClassifier([{
             c3 = "green";
             drawIA();
             img3.onload = function() {
-    ctx.drawImage(img3, 550, 300, 600, 411);
-};
+                ctx.drawImage(img3, 550, 300, 600, 411);
+            };
         } // END 2
 
 
@@ -224,6 +224,11 @@ function drawIA() {
     ctx.closePath();
 
     // INTERACTIVE AREA
+
+
+    // BACKGROUND
+    ctx.fillStyle = "black";
+    ctx.fillRect(500, 0, 780, 800);
 
     // OPTIONS: BOX
     ctx.beginPath();
@@ -268,23 +273,23 @@ function drawIA() {
 
 // DATA1 ------------------
 function data1() {
-  img1.src = "img/bp.png";
-  img2.src = "img/bt.png";
-  img3.src = "img/bu.png";
+    img1.src = "img/bp.png";
+    img2.src = "img/bt.png";
+    img3.src = "img/bu.png";
 } // END data1
 
 // DATA2 ------------------
 function data2() {
-  img1.src = "img/mp.jpg";
-  img2.src = "img/mt.jpg";
-  img3.src = "img/mu.jpg";
+    img1.src = "img/mp.jpg";
+    img2.src = "img/mt.jpg";
+    img3.src = "img/mu.jpg";
 } // END data2
 
 // DATA3 ------------------
 function data3() {
-  img1.src = "img/tp.jpg";
-  img2.src = "img/tt.jpg";
-  img3.src = "img/tu.jpg";
+    img1.src = "img/tp.jpg";
+    img2.src = "img/tt.jpg";
+    img3.src = "img/tu.jpg";
 } // END data3
 
 // -----------------------------------------------------------------------------
