@@ -52,16 +52,17 @@ var yAxis = d3.svg.axis()
 
 
 // SVG -------------------------------------------------------------------------
-var svg = d3.select('svg') // Add Chart
-    .attr('width', width + margin.left + margin.right) // Chart Width
-    .attr('height', height + margin.top + margin.bottom) // Chart Height
+var canvas = d3.select('canvas') // Add Chart
+var context = canvas.node().getContext("2d");
+    // .attr('width', width + margin.left + margin.right) // Chart Width
+    // .attr('height', height + margin.top + margin.bottom) // Chart Height
     // .attr('transform', 'translate('+ margin.left +', '+ margin.top +')') //  Transform Chart
-  .append('g')
+  canvas.append('g')
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")") // Transform Content
 // -----------------------------------------------------------------------------
 
 // AXES TO SVG------------------------------------------------------------------
-  svg.append("g") // Append xAxis
+  canvas.append("g") // Append xAxis
       .attr("class", "x-axis") // Assign Class to  xAxis
       .attr("transform", "translate(0," + height + ")") // Transform xAxis
       .style({ fill: 'none', stroke: "#FFFFFF"}) // Style xAxis
@@ -73,7 +74,7 @@ var svg = d3.select('svg') // Add Chart
       .style("text-anchor", "end") // Style Text
       .text("Variable 1"); // Text
 
-  svg.append("g")  // Append yAxis
+  canvas.append("g")  // Append yAxis
       .attr("class", "y-axis") // Assign Class to yAxis
       .style({ fill: 'none', stroke: "#FFFFFF"}) // Style yAxis
       .call(yAxis) // Generate yAxis
@@ -88,7 +89,7 @@ var svg = d3.select('svg') // Add Chart
 
 
 // DATA TO SVG -----------------------------------------------------------------
-var dot = svg.selectAll("dot") // Select Dots
+var dot = canvas.selectAll("dot") // Select Dots
    .data(data) // Use Data
   .enter().append("circle") // Append Circle
     .attr("class", "dot")  // Assign  Class to Circle

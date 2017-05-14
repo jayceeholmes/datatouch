@@ -45,23 +45,39 @@ ctx.fillStyle = "red";
 ctx.fillText("viewing area", 975, 400);
 
 
-// DELETE
-ctx.fillStyle = "black";
-ctx.fillRect(500, 0, 780, 800);
-drawIA();
-
 // -----------------------------------------------------------------------------
 
 // CLASSIFIERS -----------------------------------------------------------------
 
 window.lampix.registerSimpleClassifier(
     [{
-        // CLASS RECT ARRAY (1)
+        // DOCUMENT
         posX: 85, // The X coordinate of the left side of the rectangle
         posY: 205, // The Y coordinate of the left side of the rectangle
         width: 335, // The width of the rectangle
         height: 395, // The height of the rectangle
         classifier: "cls_conv_fin" // The classifier to run inside the rectangle
+    },{
+      // PLOT
+      posX: 675, // The X coordinate of the left side of the rectangle
+      posY: 175, // The Y coordinate of the left side of the rectangle
+      width: 60, // The width of the rectangle
+      height: 60, // The height of the rectangle
+      classifier: "cls_conv_fin" // The classifier to run inside the rectangle
+    },{
+      // TRNDLNS
+      posX: 825, // The X coordinate of the left side of the rectangle
+      posY: 175, // The Y coordinate of the left side of the rectangle
+      width: 60, // The width of the rectangle
+      height: 60, // The height of the rectangle
+      classifier: "cls_conv_fin" // The classifier to run inside the rectangle
+    },{
+      // UPDATE
+      posX: 1010, // The X coordinate of the left side of the rectangle
+      posY: 175, // The Y coordinate of the left side of the rectangle
+      width: 60, // The width of the rectangle
+      height: 60, // The height of the rectangle
+      classifier: "cls_conv_fin" // The classifier to run inside the rectangle
     }],
 
     // Function that is called when a simpleClassifier is detected?
@@ -91,8 +107,50 @@ window.lampix.registerSimpleClassifier(
             ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear Canvas
             drawIA();
             changedScreen = true;
-        }
-    }
+        } // END 0
+
+        if (rectIndex === 1) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear Canvas
+            drawIA();
+
+            // OPTIONS: PLOT
+            ctx.beginPath();
+            ctx.fillStyle = "green";
+            ctx.arc(675, 175, 30, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.closePath(); // Close Shape
+            ctx.fillText("PLOT", 715, 185);
+        } // END 1
+
+        if (rectIndex === 2) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear Canvas
+            drawIA();
+
+            // OPTIONS: TREND
+            ctx.beginPath();
+            ctx.fillStyle = "green";
+            ctx.arc(825, 175, 30, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.closePath(); // Close Shape
+            ctx.fillText("TRNDLNS", 865, 185);
+
+        } // END 2
+
+        if (rectIndex === 3) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear Canvas
+            drawIA();
+
+                // OPTIONS: UPDATE
+                ctx.beginPath();
+                ctx.fillStyle = "green";
+                ctx.arc(1010, 175, 30, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.closePath(); // Close Shape
+                ctx.fillText("UPDATE", 1050, 185);
+
+        } // END 3
+
+    } // END Function
 ); // End registerSimpleClassifier
 
 // -----------------------------------------------------------------------------
@@ -173,7 +231,6 @@ function drawIA() {
     ctx.lineTo(352, 602);
     ctx.stroke();
     ctx.closePath();
-
 
 } // END drawIA
 // -----------------------------------------------------------------------------
