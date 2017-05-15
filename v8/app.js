@@ -12,7 +12,8 @@ var ctx = canvas.getContext("2d"); // Make it a 2D drawing on the canvas
 var c1;
 var c2;
 var c3;
-
+var img = new Image();
+img.src = "img/tu.jpg"
 var img1 = new Image();
 var img2 = new Image();
 var img3 = new Image();
@@ -185,7 +186,7 @@ window.lampix.registerSimpleClassifier([{
             c3 = "white";
             drawIA();
             img1.onload = function() {
-                ctx.drawImage(img1, 550, 300, 600, 411);
+                ctx.drawImage(img, 550, 300, 600, 411);
             };
         } // END 0
 
@@ -196,7 +197,7 @@ window.lampix.registerSimpleClassifier([{
             c3 = "white";
             drawIA();
             img2.onload = function() {
-                ctx.drawImage(img2, 550, 300, 600, 411);
+                ctx.drawImage(img, 550, 300, 600, 411);
             };
         } // END 1
 
@@ -207,7 +208,7 @@ window.lampix.registerSimpleClassifier([{
             c3 = "green";
             drawIA();
             img3.onload = function() {
-                ctx.drawImage(img3, 550, 300, 600, 411);
+                ctx.drawImage(img, 550, 300, 600, 411);
             };
         } // END 2
 
